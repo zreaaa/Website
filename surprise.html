@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day!</title>
+    <link rel="stylesheet" href="val.css">
+    <style>
+        .valentine-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #secretMessage {
+            font-weight: bold;
+            color: #ff3366;
+            margin-top: 10px;
+        }
+
+        #flowerImage {
+            display: none;
+            max-width: 300px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="valentine-container">
+        <h1>💖 Happy Valentine's Day Steph! 💖</h1>
+        <p>You thought your connection was broken, but it was just a little surprise! 😊</p>
+        <img src="cathearts.gif" alt="Valentine Heart">
+        <p>Wishing you love and happiness today and always! 💘</p>
+
+        <button id="mysteryButton">...</button>
+
+        <p id="secretMessage" style="display: none; font-weight: bold; color: #ff3366;">You are loved and cherished! 💖</p>
+        <img id="flowerImage" src="flawah.png" alt="Beautiful Flower Bouquet" style="display: none; max-width: 300px; margin-top: 20px;">
+    </div>
+
+    <script>
+        document.getElementById("mysteryButton").addEventListener("click", function() {
+            document.getElementById("secretMessage").style.display = "block";
+            document.getElementById("flowerImage").style.display = "block";
+            this.style.display = "none";
+        });
+    </script>
+</body>
+</html>
