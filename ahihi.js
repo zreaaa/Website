@@ -8,7 +8,7 @@ function retryConnection() {
         window.location.href = "surprise.html";
     } else {
 
-        document.querySelector("h1").innerText = "Still No Connection...";
+        document.querySelector("h1").innerText = "Connection error...";
         setTimeout(() => {
             document.querySelector("h1").innerText = "No Internet Connection";
         }, 1000);
