@@ -24,6 +24,38 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        #extraButton {
+            display: none;
+            background-color: pink;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        #extraButton:hover {
+            background-color: #ff66a3;
+        }
+
+        #valentineMessage {
+            display: none;
+            font-size: 18px;
+            color: #d1005d;
+            font-weight: bold;
+            margin-top: 15px;
+            padding: 15px;
+            border: 2px solid #ff66a3;
+            background-color: #ffe6f2;
+            border-radius: 10px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
@@ -35,14 +67,33 @@
 
         <button id="mysteryButton">...</button>
 
-        <p id="secretMessage" style="display: none; font-weight: bold; color: #ff3366;">You are loved and cherished! 💖</p>
-        <img id="flowerImage" src="flawah.png" alt="Beautiful Flower Bouquet" style="display: none; max-width: 300px; margin-top: 20px;">
+        <p id="secretMessage" style="display: none;">You are loved and cherished! 💖</p>
+        <img id="flowerImage" src="flawah.png" alt="Beautiful Flower Bouquet" style="display: none;">
+
+        <button id="extraButton">More Love 💗</button>
+
+        <p id="valentineMessage">
+            Hey Steph, 💖<br><br>
+            Happy Valentine’s Day! I just wanted to take a moment to remind you how much you mean to me. 
+            You bring so much light and joy into my everyday life, and I’m endlessly grateful for you. Every moment we share, 
+            whether big or small, makes my days brighter. I admire your kindness, your strength, and the way you always make me smile. 
+            Life feels so much sweeter with you in it. I hope today reminds you just how loved and appreciated you are—not just today, but every single day. 
+            No words could ever fully express how much you mean to me, but I hope you always feel it. 
+            Thank you for being you, and for being in my life. Wishing you all the love and happiness in the world today and always.  
+            <br><br>With all my heart, 💕<br>Your IT admirer:>
+        </p>
     </div>
 
     <script>
         document.getElementById("mysteryButton").addEventListener("click", function() {
             document.getElementById("secretMessage").style.display = "block";
             document.getElementById("flowerImage").style.display = "block";
+            document.getElementById("extraButton").style.display = "inline-block";
+            this.style.display = "none";
+        });
+
+        document.getElementById("extraButton").addEventListener("click", function() {
+            document.getElementById("valentineMessage").style.display = "block";
             this.style.display = "none";
         });
     </script>
