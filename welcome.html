@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black; /* Match index.html */
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .welcome-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        h1 {
+            font-size: 26px;
+            color: pink;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .pwede-btn {
+            background-color: pink;
+            color: white;
+        }
+        .sorry-btn {
+            background-color: lightgray;
+            color: black;
+        }
+        .night, .flowers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="night"></div> <!-- Background effect -->
+    <div class="flowers"></div> <!-- Animated flowers -->
+
+    <div class="welcome-container">
+        <h1>Ready kana ba?</h1>
+        <p>Tatahimik muna ako kapag nag-next kana, kase sobrang nag-ipon ako ng courage gawin ito.</p>
+
+        <div class="button-container">
+            <a href="index.html" class="btn pwede-btn">Yes, ready</a>
+            
+        </div>
+    </div>
+
+</body>
+</html>
