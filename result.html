@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you like me? hihi 💖</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 32px;
+            color: #ff4f93;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+        .btn {
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #yesBtn {
+            background-color: #ff4f93;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        #yesBtn:hover {
+            background-color: #ff2e75;
+            transform: scale(1.1);
+        }
+        #noBtn {
+            background-color: white;
+            color: #ff4f93;
+            border: 2px solid #ff4f93;
+            position: relative;
+        }
+        #noBtn:hover {
+            background-color: #ff4f93;
+            color: white;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-size: 24px;
+            color: #ff4f93;
+            font-weight: bold;
+        }
+        .popup img {
+            width: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Do you like me na ba? hihi 💕</h1>
+    
+    <div class="button-container">
+        <button class="btn" id="yesBtn" onclick="yesClick()">Yes 💖</button>
+        <button class="btn" id="noBtn" onmouseover="moveNo()">No 🙅‍♀️</button>
+    </div>
+
+    <div class="popup" id="popup">
+        <p>I like you too hihihi 😘💖</p>
+        <img src="capooshy.webp" alt="Cute Capoo Blushing">
+    </div>
+
+    <script>
+        function yesClick() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function moveNo() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            document.getElementById("noBtn").style.position = "absolute";
+            document.getElementById("noBtn").style.left = `${x}px`;
+            document.getElementById("noBtn").style.top = `${y}px`;
+        }
+    </script>
+
+</body>
+</html>
