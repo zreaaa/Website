@@ -1,65 +1,40 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffdde1;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
-
 .container {
-    max-width: 500px;
-    margin: 50px auto;
-    background: white;
-    padding: 20px;
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center; 
 }
 
 h1 {
-    color: #ff4081;
-}
-
-h2 {
-    color: #333;
-}
-
-p {
-    color: #666;
-    font-size: 18px;
+    color: #6f4e37;
+    text-align: center; 
 }
 
 button {
-    font-size: 18px;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
+    background-color: #6f4e37;
+    color: white;
+    font-weight: bold;
     cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
+    display: inline-block; 
+    text-align: center;
 }
 
-.yes-btn {
-    background: #ff4081;
-    color: white;
+.logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.yes-btn:hover {
-    background: #e91e63;
-}
-
-.no-btn {
-    background: #bbb;
-    color: white;
-}
-
-.no-btn:hover {
-    background: #888;
-}
-
-.next-btn {
-    background: #4CAF50;
-    color: white;
-}
-
-.next-btn:hover {
-    background: #388E3C;
+button:hover {
+    background-color: #543a29;
 }
