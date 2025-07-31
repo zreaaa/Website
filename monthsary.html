@@ -73,25 +73,42 @@
       font-size: 1em;
       color: #ff4d6d;
     }
+
+    #mute-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ffccd5;
+      color: #333;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 999;
+    }
   </style>
 </head>
 <body>
-<audio id="bg-music" autoplay loop>
+
+<!-- ✅ Autoplay with muted to bypass restriction -->
+<audio id="bg-music" autoplay loop muted>
   <source src="Lover Taylor Swift.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
-<button id="mute-btn" style="position: fixed; top: 20px; right: 20px; background: #ffccd5; color: #333; border: none; padding: 10px 15px; border-radius: 10px; font-weight: bold; cursor: pointer; z-index: 999;">
-  🔊 Mute
-</button>
+<!-- Mute/Unmute Button -->
+<button id="mute-btn">🔈 Unmute</button>
 
 <script>
   const audio = document.getElementById('bg-music');
   const btn = document.getElementById('mute-btn');
 
+  // Autoplay muted, unmute after first user interaction
   btn.addEventListener('click', () => {
     if (audio.muted) {
       audio.muted = false;
+      audio.play();
       btn.textContent = '🔊 Mute';
     } else {
       audio.muted = true;
@@ -100,32 +117,32 @@
   });
 </script>
 
+<h1>Happy Monthsary, Baby! 💘</h1>
+<div class="heart">💖 💕 💗 💓 💞 💘</div>
 
-  <h1>Happy Monthsary, Baby! 💘</h1>
-  <div class="heart">💖 💕 💗 💓 💞 💘</div>
+<div class="message">
+  <p>
+    Every moment with you feels magical ✨. I’m so grateful for your love, your smile, and your warm hug ("hug" lang kase one time lang🥲). Thank you for being the light of my life 🌈.
+  </p>
+  <p>
+    Here's to many more months and memories together! I love you more than words can say. 💞
+  </p>
+  <p>
+    Forever yours,<br><strong>Your Babycakes</strong> 🤭❤️
+  </p>
+</div>
 
-  <div class="message">
-    <p>
-      Every moment with you feels magical ✨. I’m so grateful for your love, your smile, and your warm hug ("hug" lang kase one time lang🥲). Thank you for being the light of my life 🌈.
-    </p>
-    <p>
-      Here's to many more months and memories together! I love you more than words can say. 💞
-    </p>
-    <p>
-      Forever yours,<br><strong>Your Babycakes</strong> 🤭❤️
-    </p>
-  </div>
+<h2>Our Cutest Moments 📸</h2>
+<h3>(Wala gaano pics together kaya ito lang:/)</h3>
+<div class="gallery">
+  <img src="moment 1.jpg" alt="Cute moment 1">
+  <img src="moment 2.jpg" alt="Cute moment 2">
+  <img src="moment 3.jpg" alt="Cute moment 3">
+</div>
 
-  <h2>Our Cutest Moments 📸</h2>
-  <h3>(Wala gaano pics together kaya ito lang:/)</h3>
-  <div class="gallery">
-    <img src="moment 1.jpg" alt="Cute moment 1">
-    <img src="moment 2.jpg" alt="Cute moment 2">
-    <img src="moment 3.jpg" alt="Cute moment 3">
-  </div>
+<footer>
+  Made with endless love 💌 | Happy 2nd Monthsary Baby🥰!
+</footer>
 
-  <footer>
-    Made with endless love 💌 | Happy 2nd Monthsary Baby🥰!
-  </footer>
 </body>
 </html>
