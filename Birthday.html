@@ -54,6 +54,7 @@
       padding: 20px;
       border-radius: 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      display: none;
     }
 
     video {
@@ -67,80 +68,56 @@
       color: #ff69b4;
     }
 
-    .btn {
-      background: #ff85a2;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      border: none;
-      font-weight: bold;
-      font-size: 1em;
-      margin-top: 20px;
+    .gift-wrap {
+      margin: 30px auto;
+      background: #ffc2d1;
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
       cursor: pointer;
-      transition: 0.3s;
+      transition: all 0.4s ease;
+      animation: pulse 2s infinite;
     }
 
-    .btn:hover {
-      background: #ff4d6d;
+    .gift-wrap:hover {
+      transform: scale(1.05);
     }
 
-    #mute-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #ffccd5;
-      color: #333;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 999;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
 <body>
-    <audio id="bg-music" autoplay loop muted>
-  <source src="bday.mp3" type="audio/mpeg">
-</audio>
-
-<!-- Mute/Unmute Button -->
-<button id="mute-btn">🔈 Unmute</button>
-
-<script>
-  const audio = document.getElementById('bg-music');
-  const btn = document.getElementById('mute-btn');
-
-  // Autoplay muted, unmute after first user interaction
-  btn.addEventListener('click', () => {
-    if (audio.muted) {
-      audio.muted = false;
-      audio.play();
-      btn.textContent = '🔊 Mute';
-    } else {
-      audio.muted = true;
-      btn.textContent = '🔈 Unmute';
-    }
-  });
-</script>
 
   <h1>Happy Birthday, My Love! 🎉🎂</h1>
   <div class="heart">💖 🎈 🎁 🎀 💝 💕</div>
 
   <div class="message">
     <p>
-      Today is all about you, my sweetest sunshine ☀️. I’m so grateful for every moment we’ve shared — your smile, your laugh, your big heart 💗. 
+      Today is all about you, my sweetest sunshine ☀️. I’m so grateful for every moment we’ve shared — your smile, your laugh, your big heart 💗.
     </p>
     <p>
-      On your special day, I just want to remind you how deeply you are loved and cherished. I hope this video makes you smile just like you always make me smile 😊.
+      On your special day, I just want to remind you how deeply you are loved and cherished. I hope this little surprise brings a big smile to your face 😊.
     </p>
     <p>
       Happy Birthday, Babe! You're my favorite person in the whole world 🌍. I love you endlessly 💘.
     </p>
   </div>
 
-  <div class="video-box">
-    <h2>🎥 A Little Surprise for You</h2>
+  <div id="gift" class="gift-wrap" onclick="unwrapGift()">
+    🎁
+  </div>
+
+  <div id="videoContainer" class="video-box">
+    <h2>🎥 A Birthday Surprise Just for You!</h2>
     <video controls>
       <source src="vidteptep.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -148,8 +125,22 @@
   </div>
 
   <footer>
-    With all my love 💌 | Forever yours – Babycakes 💞
+    Made with all my love 💌 | Forever yours – Babycakes 💞
   </footer>
+
+  <script>
+    function unwrapGift() {
+      const gift = document.getElementById("gift");
+      const video = document.getElementById("videoContainer");
+
+      gift.style.opacity = 0;
+      gift.style.transform = "scale(0)";
+      setTimeout(() => {
+        gift.style.display = "none";
+        video.style.display = "block";
+      }, 600);
+    }
+  </script>
 
 </body>
 </html>
