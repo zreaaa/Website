@@ -14,10 +14,9 @@
       padding: 0;
       background: linear-gradient(to top, #fffde7, #ffeef7);
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow-x: hidden;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
     }
 
     h1 {
@@ -37,6 +36,12 @@
       max-width: 1000px;
       align-self: center;
       right: 10px;
+      position: absolute;
+      top: 100px;
+      bottom: 100px;
+      margin: auto;
+      overflow-y: auto;
+      pointer-events: auto;
     }
 
     .sunflower {
