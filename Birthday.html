@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Happy Birthday, My Love! 🎂💕</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ffe4ec, #fff0f5);
+      color: #d63384;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 3em;
+      animation: bounce 1s ease-out forwards;
+    }
+
+    @keyframes bounce {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .heart {
+      font-size: 2rem;
+      animation: float 2s infinite ease-in-out;
+      color: hotpink;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .message {
+      max-width: 700px;
+      margin: 30px auto;
+      font-size: 1.3em;
+      background: #fff0f6;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+    }
+
+    .video-box {
+      margin: 40px auto;
+      max-width: 90%;
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    video {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    footer {
+      margin: 40px 0;
+      font-size: 1em;
+      color: #ff69b4;
+    }
+
+    .btn {
+      background: #ff85a2;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      font-weight: bold;
+      font-size: 1em;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff4d6d;
+    }
+
+    #mute-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #ffccd5;
+      color: #333;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop muted>
+  <source src="bday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Mute/Unmute Button -->
+<button id="mute-btn">🔈 Unmute</button>
+
+<script>
+  const audio = document.getElementById('bg-music');
+  const btn = document.getElementById('mute-btn');
+
+  // Autoplay muted, unmute after first user interaction
+  btn.addEventListener('click', () => {
+    if (audio.muted) {
+      audio.muted = false;
+      audio.play();
+      btn.textContent = '🔊 Mute';
+    } else {
+      audio.muted = true;
+      btn.textContent = '🔈 Unmute';
+    }
+  });
+</script>
+
+  <h1>Happy Birthday, My Love! 🎉🎂</h1>
+  <div class="heart">💖 🎈 🎁 🎀 💝 💕</div>
+
+  <div class="message">
+    <p>
+      Today is all about you, my sweetest sunshine ☀️. I’m so grateful for every moment we’ve shared — your smile, your laugh, your big heart 💗. 
+    </p>
+    <p>
+      On your special day, I just want to remind you how deeply you are loved and cherished. I hope this video makes you smile just like you always make me smile 😊.
+    </p>
+    <p>
+      Happy Birthday, Babe! You're my favorite person in the whole world 🌍. I love you endlessly 💘.
+    </p>
+  </div>
+
+  <div class="video-box">
+    <h2>🎥 A Little Surprise for You</h2>
+    <video controls>
+      <source src="vidteptep.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <footer>
+    With all my love 💌 | Forever yours – Babycakes 💞
+  </footer>
+
+</body>
+</html>
