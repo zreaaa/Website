@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sunflowers for My Love 🌻💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #fffde7, #ffeef7);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #d63384;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 2em;
+    }
+
+    .garden {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      width: 100%;
+      max-width: 1000px;
+      align-self: center;
+      right: 10px;
+    }
+
+    .sunflower {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      animation: grow 0.6s ease-out forwards;
+    }
+
+    .petal {
+      position: absolute;
+      width: 30px;
+      height: 60px;
+      background: #ffeb3b;
+      border-radius: 50%;
+      transform-origin: center bottom;
+    }
+
+    .petal:nth-child(1)  { transform: rotate(0deg)    translateY(-40px); }
+    .petal:nth-child(2)  { transform: rotate(30deg)   translateY(-40px); }
+    .petal:nth-child(3)  { transform: rotate(60deg)   translateY(-40px); }
+    .petal:nth-child(4)  { transform: rotate(90deg)   translateY(-40px); }
+    .petal:nth-child(5)  { transform: rotate(120deg)  translateY(-40px); }
+    .petal:nth-child(6)  { transform: rotate(150deg)  translateY(-40px); }
+    .petal:nth-child(7)  { transform: rotate(180deg)  translateY(-40px); }
+    .petal:nth-child(8)  { transform: rotate(210deg)  translateY(-40px); }
+    .petal:nth-child(9)  { transform: rotate(240deg)  translateY(-40px); }
+    .petal:nth-child(10) { transform: rotate(270deg)  translateY(-40px); }
+    .petal:nth-child(11) { transform: rotate(300deg)  translateY(-40px); }
+    .petal:nth-child(12) { transform: rotate(330deg)  translateY(-40px); }
+
+    .center {
+      width: 60px;
+      height: 60px;
+      background: #6d4c41;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+
+    .center img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .heart-btn {
+      position: fixed;
+      bottom: 25px;
+      background-color: #ff6f91;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      z-index: 999;
+      align-self: center;
+    }
+
+    @keyframes grow {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6em;
+        padding: 15px 5px;
+      }
+
+    .sunflower {
+        width: 90px;
+        height: 90px;
+      }
+
+    .petal {
+        width: 20px;
+        height: 45px;
+        right: 20px;
+      }
+
+    .center {
+      width: 45px;
+      height: 45px;
+      top: 22px;
+      left: 22px;
+      }
+
+    .heart-btn {
+      font-size: 1.1rem;
+      padding: 10px 16px;
+      bottom: 20px;
+      }
+    }
+    .bee {
+      position: fixed;
+      pointer-events: none;
+      z-index: 998;
+    }
+
+    @keyframes fly {
+      0%   { transform: translate(0vw, 100vh) rotate(0deg); }
+      25%  { transform: translate(25vw, 50vh) rotate(45deg); }
+      50%  { transform: translate(50vw, 10vh) rotate(-45deg); }
+      75%  { transform: translate(75vw, 60vh) rotate(20deg); }
+      100% { transform: translate(100vw, 0vh) rotate(-20deg); }
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>I love you Stephanie Nicole, My Sunshine 🌻💕</h1>
+
+<div class="garden" id="garden"></div>
+
+<button class="heart-btn" onclick="growSunflower()">💗</button>
+
+<script>
+  const images = [
+    "image 1.jpg",
+    "image 2.jpg",
+    "image 3.jpg",
+    "image 4.jpg",
+    "image 5.jpg",
+    "image 6.jpg"
+  ];
+
+  let index = 0;
+  const maxFlowers = 6;
+
+  function growSunflower() {
+    if (index >= maxFlowers) return;
+
+    const flower = document.createElement('div');
+    flower.className = 'sunflower';
+
+    for (let i = 0; i < 12; i++) {
+      const petal = document.createElement('div');
+      petal.className = 'petal';
+      flower.appendChild(petal);
+    }
+
+    const center = document.createElement('div');
+    center.className = 'center';
+
+    const img = document.createElement('img');
+    img.src = images[index % images.length];
+    img.alt = "Our photo";
+    center.appendChild(img);
+
+    flower.appendChild(center);
+    document.getElementById('garden').appendChild(flower);
+    index++;
+  }
+
+  window.onload = growSunflower;
+</script>
+<script>
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function createBee(index) {
+    const bee = document.createElement('img');
+    bee.src = 'bee.png';
+    bee.className = 'bee';
+
+    const size = random(30, 50);
+    bee.style.width = `${size}px`;
+    bee.style.height = `${size}px`;
+
+    const animName = `flyBee${index}`;
+    const startX = random(0, 100);
+    const startY = random(0, 100);
+    const endX = random(0, 100);
+    const endY = random(0, 100);
+    const midX = random(0, 100);
+    const midY = random(0, 100);
+
+    const duration = random(8, 15).toFixed(2);
+
+    const styleSheet = document.styleSheets[0];
+    styleSheet.insertRule(`
+      @keyframes ${animName} {
+        0%   { transform: translate(${startX}vw, ${startY}vh) rotate(0deg); }
+        50%  { transform: translate(${midX}vw, ${midY}vh) rotate(180deg); }
+        100% { transform: translate(${endX}vw, ${endY}vh) rotate(360deg); }
+      }
+    `, styleSheet.cssRules.length);
+
+    bee.style.animation = `${animName} ${duration}s linear infinite`;
+    document.body.appendChild(bee);
+  }
+
+  for (let i = 0; i < 10; i++) {
+    createBee(i);
+  }
+</script>
+
+</body>
+</html>
