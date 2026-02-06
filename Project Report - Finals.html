@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure System Loader</title>
+
+<style>
+    body {
+        background: black;
+        color: #00ff00;
+        font-family: monospace;
+        padding: 20px;
+        text-align: center;
+    }
+    .error {
+        color: red;
+        font-weight: bold;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div id="loading">
+    <p>Connecting to secure server...</p>
+    <p>Loading system files...</p>
+    <p>Please wait...</p>
+</div>
+
+<div id="timeout" class="hidden">
+    <p class="error">⚠ CONNECTION TIMED OUT ⚠</p>
+    <p>Server did not respond.</p>
+    <p>Please refresh the page.</p>
+</div>
+
+<div id="virus" class="hidden">
+    <p class="error">⚠ CRITICAL VIRUS DETECTED ⚠</p>
+    <p>Virus Name: <b>LOVE.exe</b></p>
+    <p>Status: Permanent</p>
+    <br>
+    <p>System Damage:</p>
+    <ul style="text-align:left; display:inline-block;">
+        <li>Heart infected 💘</li>
+        <li>Smiling uncontrollably</li>
+        <li>Thinking of someone special</li>
+    </ul>
+    <br><br>
+    <p>No cure available.</p>
+    <p>Happy Valentine’s Day ❤️</p>
+    <p>I love youuu mwa mwa❤️</p>
+</div>
+
+<script>
+let refreshCount = localStorage.getItem("refreshCount");
+
+if (!refreshCount) {
+    refreshCount = 1;
+} else {
+    refreshCount = parseInt(refreshCount) + 1;
+}
+
+localStorage.setItem("refreshCount", refreshCount);
+
+setTimeout(() => {
+    if (refreshCount < 6) {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("timeout").classList.remove("hidden");
+    } else {
+        localStorage.removeItem("refreshCount");
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("virus").classList.remove("hidden");
+    }
+}, 3000);
+</script>
+
+</body>
+</html>
